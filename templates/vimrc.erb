@@ -354,6 +354,12 @@ let g:vim_markdown_json_frontmatter = 1
 " Run terraform fmt on save.
 let g:terraform_fmt_on_save=1
 
+" =================== vim-airline ========================
+
+" Set the time instead of the encoding
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_y = '%{strftime("%c")}'
+
 <% end %>
 
 " vim:ts=2:sw=2:et

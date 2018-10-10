@@ -12,5 +12,6 @@ default['vim']['git-plugins'] = {
   "vim-systemd-syntax" => "wgwoods/vim-systemd-syntax",
   "vim-terraform" => "hashivim/vim-terraform",
   "vim-toml" => "cespare/vim-toml",
-  "vim-yaml" => "stephpy/vim-yaml"
+  "vim-yaml" => "stephpy/vim-yaml",
+  "vim-airline" => "vim-airline/vim-airline"
 }
