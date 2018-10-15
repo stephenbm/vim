@@ -12,4 +12,6 @@ end
 template "#{ENV['HOME']}/.vimrc" do
   source 'vimrc.erb'
   mode 00644
+  owner node['dotfiles']['user']
+  group node['dotfiles']['group']
 end

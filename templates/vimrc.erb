@@ -189,9 +189,20 @@ nnoremap <space> zz
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
+function! WrapForScreen(s)
+  if exists('$TMUX') || match($TERM, "screen")==-1
+    return a:s
+  endif
+
+  let screen_start = "\<Esc>P"
+  let screen_end = "\<Esc>\\"
+
+  return screen_start . a:s . screen_end
+endfunction
+
 " never do this again --> :set paste <ctrl-v> :set no paste
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
+let &t_SI .= WrapForScreen("\<Esc>[?2004h")
+let &t_EI .= WrapForScreen("\<Esc>[?2004l")
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
