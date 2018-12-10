@@ -15,6 +15,7 @@ filetype plugin indent on     " required
 "
 set noerrorbells                " No beeps
 set number                      " Show line numbers
+nnoremap <F2> :set nonumber!<CR>
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
@@ -117,17 +118,6 @@ set display+=lastline
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" If linux then set ttymouse
-let s:uname = system("echo -n \"$(uname)\"")
-if !v:shell_error && s:uname == "Linux" && !has('nvim')
-  set ttymouse=xterm
-endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
