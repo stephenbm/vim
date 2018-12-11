@@ -287,6 +287,20 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
 vnoremap <leader>gb :Gblame<CR>
 
+" ==================== Syntastic ==================
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_extra_filetypes = [ "chef"]
+let g:syntastic_filetype_map = {
+        \ "ruby.chef": "chef"}
+let g:syntastic_chef_checkers = ["foodcritic"]
+
 " ==================== Vim-go ====================
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_command = "goimports"

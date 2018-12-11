@@ -13,5 +13,7 @@ default['vim']['git-plugins'] = {
   "vim-terraform" => "hashivim/vim-terraform",
   "vim-toml" => "cespare/vim-toml",
   "vim-yaml" => "stephpy/vim-yaml",
-  "vim-airline" => "vim-airline/vim-airline"
+  "vim-airline" => "vim-airline/vim-airline",
+  "vim-chef" => "dougireton/vim-chef",
+  "vim-syntastic" => "vim-syntastic/syntastic"
 }
